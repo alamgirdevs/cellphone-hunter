@@ -1,10 +1,10 @@
 const searchPhone = ()=>{
     const searchField =document.getElementById('search-field');
     const searchText = searchField.value;
-    // console.log(searchText);
+
     searchField.value='';
     const url =`https://openapi.programming-hero.com/api/phones?search=${searchText}`;
-    // console.log(url);
+    
     fetch(url)
     .then(res=>res.json())
     .then(json =>displaySearchResult(json.data));
@@ -18,7 +18,7 @@ const searchPhone = ()=>{
       results= 'no results found';
     };
     data.forEach (item=>{
-      // console.log(item);
+      
       const div =document.createElement('div');
       div.classList.add('col');
       div.innerHTML=`
@@ -36,7 +36,7 @@ const searchPhone = ()=>{
   };
 
   const loadPhoneDetail = itemId =>{
-    // console.log(itemId);
+    
     const url =`https://openapi.programming-hero.com/api/phone/${itemId}`;
 
     fetch(url)
